@@ -15,7 +15,7 @@
     nix-colors,
     flake-utils,
   }: let
-    systems = ["x86_64-linux" "armv7l-linux"];
+    systems = ["x86_64-linux" "armv7l-linux" "aarch64-linux"];
     build = system: let
       fontsize = 18;
       colors = nix-colors.colorSchemes.gruvbox-material-dark-hard;
