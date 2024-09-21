@@ -46,6 +46,9 @@
         overlays = [
         ];
       };
+      fontConfig = pkgs.makeFontsConf {
+        fontDirectories = [pkgs.terminus_font];
+      };
     in {
       packages = rec {
         st = pkgs.st.overrideAttrs (oldAttrs: rec {
@@ -57,6 +60,13 @@
           };
           postPatch = "${oldAttrs.postPatch} \n cp ${configFile} config.def.h";
           propegatedBuildInputs = pkgs.terminus_font;
+          postInstall = '' 
+            wrapProgram $out/bin/st \
+              --set FONTCONFIG_FILE ${fontConfig}
+          '';
+          nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
+            pkgs.makeWrapper
+          ];
         });
         default = st;
       };
