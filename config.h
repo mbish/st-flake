@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Terminus:style=Regular:size=14:antialias=false:autohint=false";
+static char font[] =
+    "Terminus:style=Regular:size=14:antialias=false:autohint=false";
 static int borderpx = 2;
 
 /*
@@ -100,36 +101,29 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
     /* 8 normal colors */
-    "#{{ colors.base00 }}", // ----
-    "#{{ colors.base08 }}", // red
-    "#{{ colors.base0B }}", // green
-    "#{{ colors.base09 }}", // yellow
-    "#{{ colors.base0D }}", // blue
-    "#{{ colors.base0E }}", // purple
-    "#{{ colors.base0C }}", // aqua
-    "#{{ colors.base07 }}", // ++++
-    // "#{{ colors.base06 }}", // +++
-    // "#{{ colors.base05 }}", // ++
-
-    // "#{{ colors.base04 }}", // +
-    // "#{{ colors.base01 }}", // ---
+    "#{{ colors.base00 }}", // soft contrast:
+    "#{{ colors.base08 }}", // neutral red
+    "#{{ colors.base0B }}", // neutral green
+    "#{{ colors.base09 }}", // neutral yellow
+    "#{{ colors.base0D }}", // neutral blue
+    "#{{ colors.base0E }}", // neutral purple
+    "#{{ colors.base0C }}", // neutral aqua
+    "#{{ colors.base07 }}", // light 4
     /* 8 bright colors */
-    // "#{{ colors.base03 }}", // -
-    "#{{ colors.base05 }}", // ++
-    "#{{ colors.base08 }}", // red
-    "#{{ colors.base0B }}", // green
-    "#{{ colors.base09 }}", // yellow
-    "#{{ colors.base0D }}", // blue
-    "#{{ colors.base0E }}", // purple
-    "#{{ colors.base0C }}", // aqua
-    //"#{{ colors.base04 }}", // +
-    "#{{ colors.base06 }}", // +++
+    "#{{ colors.base02 }}", // gray 245
+    "#{{ colors.base08 }}", // bright red
+    "#{{ colors.base0B }}", // bright green
+    "#{{ colors.base09 }}", // bright yellow
+    "#{{ colors.base0D }}", // bright blue
+    "#{{ colors.base0E }}", // bright purple
+    "#{{ colors.base0C }}", // bright aqua
+    "#{{ colors.base06 }}", // light 1
+
     [255] = 0,
-    "#{{ colors.base07 }}", // ++++
-    //"#555555",              // ???
-    "#{{ colors.base0C }}", // aqua
-    "#{{ colors.base06 }}", // +++
-    "#{{ colors.base00 }}", // ---- (background color)
+    "#{{ colors.base07 }}",
+    "#{{ colors.base0C }}",
+    "#{{ colors.base06 }}",
+    "#{{ colors.base00 }}",
 };
 
 /*
@@ -478,4 +472,3 @@ static uint selmasks[] = {
 static char ascii_printable[] = " !\"#$%&'()*+,-./0123456789:;<=>?"
                                 "@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
                                 "`abcdefghijklmnopqrstuvwxyz{|}~";
-

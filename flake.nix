@@ -60,13 +60,17 @@
           };
           postPatch = "${oldAttrs.postPatch} \n cp ${configFile} config.def.h";
           propegatedBuildInputs = pkgs.terminus_font;
-          postInstall = '' 
+          postInstall = ''
             wrapProgram $out/bin/st \
               --set FONTCONFIG_FILE ${fontConfig}
+
+            cp config.h $out/share
           '';
-          nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
-            pkgs.makeWrapper
-          ];
+          nativeBuildInputs =
+            oldAttrs.nativeBuildInputs
+            ++ [
+              pkgs.makeWrapper
+            ];
         });
         default = st;
       };
