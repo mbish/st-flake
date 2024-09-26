@@ -109,8 +109,8 @@ static const char *colorname[] = {
     "#{{ colors.base0E }}", // neutral purple
     "#{{ colors.base0C }}", // neutral aqua
     "#{{ colors.base07 }}", // light 4
-    /* 8 bright colors */
-    "#{{ colors.base04 }}", // gray 245
+                            /* 8 bright colors */
+    "#928374",              // gray 245
     "#{{ colors.base08 }}", // bright red
     "#{{ colors.base0B }}", // bright green
     "#{{ colors.base09 }}", // bright yellow
