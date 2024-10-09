@@ -47,7 +47,7 @@
         ];
       };
       fontConfig = pkgs.makeFontsConf {
-        fontDirectories = [pkgs.terminus_font];
+        fontDirectories = [pkgs.nerdfonts "${pkgs.ubuntu_font_family}/share/fonts/ubuntu"];
       };
     in {
       packages = rec {
