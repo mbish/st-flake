@@ -47,7 +47,10 @@
         ];
       };
       fontConfig = pkgs.makeFontsConf {
-        fontDirectories = [pkgs.nerdfonts "${pkgs.ubuntu_font_family}/share/fonts/ubuntu"];
+        fontDirectories = [
+          (builtins.filter pkgs.lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts))
+          "${pkgs.ubuntu_font_family}/share/fonts/ubuntu"
+        ];
       };
     in {
       packages = rec {
