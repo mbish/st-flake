@@ -50,6 +50,7 @@
         fontDirectories = [
           (builtins.filter pkgs.lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts))
           "${pkgs.ubuntu_font_family}/share/fonts/ubuntu"
+          "${pkgs.terminus_font}/share/fonts/terminus"
         ];
       };
     in {
