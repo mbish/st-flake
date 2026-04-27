@@ -54,9 +54,7 @@
           "${pkgs.terminus_font}/share/fonts/terminus"
         ];
       };
-    in {
-      packages = rec {
-        st = pkgs.st.overrideAttrs (oldAttrs: rec {
+      newSt = pkgs: pkgs.st.overrideAttrs (oldAttrs: rec {
           patches = [
           ];
           configFile = templateFile "config.def.h" ./config.h {
@@ -77,7 +75,13 @@
               pkgs.makeWrapper
             ];
         });
-        default = st;
+    in {
+      packages = {
+        st = newSt pkgs;
+        default = newSt pkgs;
+      };
+      overlays.default = final: prev: {
+        st = newSt prev;
       };
     };
   in
