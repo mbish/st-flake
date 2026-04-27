@@ -48,8 +48,9 @@
       };
       fontConfig = pkgs.makeFontsConf {
         fontDirectories = [
-          (builtins.filter pkgs.lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts))
-          "${pkgs.ubuntu_font_family}/share/fonts/ubuntu"
+          # (builtins.filter pkgs.lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts))
+          pkgs.nerd-fonts.symbols-only
+          "${pkgs.ubuntu-classic}/share/fonts/ubuntu"
           "${pkgs.terminus_font}/share/fonts/terminus"
         ];
       };
